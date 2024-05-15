@@ -16,7 +16,12 @@ const peopleData = [
   export const mydetails=
     {
         views:"Who's viewed your profile",
-        impressions:"Impressions of your post"
+        impressions:"Impressions of your post",
+        myname:"Sahana K V",
+        place:"Bangalore, IN",
+        portfolio_url:"www.youtube.com/sahana",
+        likes:"12",
+        description:"My Content"
     }
   
   export default peopleData;

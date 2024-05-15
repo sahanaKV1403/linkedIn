@@ -49,5 +49,10 @@ export const useStyles = makeStyles({
     menuitem: {
         paddingBottom: "5px",
         width: "230px"
+    },
+
+    plus:{
+        fontSize: "20px", 
+        marginRight: "10px"
     }
 })

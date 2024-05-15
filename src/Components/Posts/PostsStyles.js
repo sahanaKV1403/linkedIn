@@ -73,8 +73,7 @@ export const useStyles = makeStyles({
     },
 
     img_description:{
-        fontSize: "16px", 
-        paddingBottom: "5px" 
+        fontSize: "16px"
     },
 
     url:{
@@ -84,6 +83,6 @@ export const useStyles = makeStyles({
 
     bio:{
         color: 'black',
-        fontSize: "16px" 
+        fontSize: "16px",
     }
 })

@@ -2,6 +2,7 @@ import { blue } from '@mui/material/colors';
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
+
     count: {
         color: blue[600],
         float: "right"
@@ -83,5 +84,4 @@ export const useStyles = makeStyles({
             display:"block"
         }, 
     }
-
 });

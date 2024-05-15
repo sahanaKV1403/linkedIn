@@ -20,7 +20,7 @@ export const useStyles = makeStyles({
     },
 
     search: {
-        backgroundColor: "rgb(241 245 249)",
+        backgroundColor:grey[200],
         width: "300px",
         paddingLeft: "10px",
         borderRadius: "5px",

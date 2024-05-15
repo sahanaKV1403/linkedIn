@@ -1,3 +1,5 @@
+//to set up redux store, stores global state
+//import configurestore -> export store ->
 import { configureStore } from '@reduxjs/toolkit';
 import { postsSlice } from './postsSlice';
 

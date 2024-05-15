@@ -57,6 +57,22 @@ export const useStyles = makeStyles({
         color:"grey", 
         paddingRight:"7%", 
         marginLeft:"1% !important"
+    },
+
+    posts1:{
+            borderRadius: "50px !important",
+            border: "2px solid lightgrey !important",
+            color: "darkgrey !important",
+            fontWeight: "bold !important",
+            fontSize: "17px !important",
+            textTransform: 'none !important',
+            width: "450px",
+            margin: "10px 0px !important",
+            padding: "5px 15px !important",
+            justifyContent: 'start !important',
+            '&:hover': {
+                backgroundColor: "lightgrey !important"
+            }
     }
 
 })

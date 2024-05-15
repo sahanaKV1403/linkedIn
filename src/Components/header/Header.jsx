@@ -8,21 +8,24 @@ import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';
 import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ViewCompactOutlinedIcon from '@mui/icons-material/ViewCompactOutlined';
-import logo from './logo.png'
+import logo from '../../assets/logo.png'
 import Menu from '@mui/material/Menu';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Popper from '@mui/material/Popper';
 import Divider from '@mui/material/Divider';
 import InputBase from '@mui/material/InputBase';
 import { SearchOutlined } from '@mui/icons-material';
-import { useStyles } from './NavbarStyles';
+import { useStyles } from './HeaderStyles';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
-const Navbar = () => {
+const Header = () => {
     const classes = useStyles();
+
+    // for dropdown of searchbox, searchAnchorEl: contains the element that generated event, 
+    //menuOpen: handles close and open functionality of dropdown
     const [searchAnchorEl, setSearchAnchorEl] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -40,7 +43,7 @@ const Navbar = () => {
         <Box >
             <AppBar position="fixed" >
                 <Toolbar className={classes.custom_toolbar}>
-                    <Box />
+                    {/* logo */}
                     <img
                         className={classes.logoimg}
                         src={logo}
@@ -53,9 +56,11 @@ const Navbar = () => {
                             className={classes.search}
                             onClick={handleSearchClick}
                             placeholder="Search"
-                            inputProps={{ 'aria-label': 'menu' }}
                         />
                     </Box>
+
+                    {/* dropdown, kkepMounted: ensures that menu is not removed from the DOM even when closed.
+                     helps in maintaining menu's state and position for faster rendering when it is opened again.*/}
                     <Popper open={menuOpen} anchorEl={searchAnchorEl}>
                         <Menu
                             anchorEl={searchAnchorEl}
@@ -132,4 +137,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Header;

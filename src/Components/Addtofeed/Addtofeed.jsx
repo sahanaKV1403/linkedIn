@@ -48,6 +48,7 @@ const Addtofeed = () => {
     }
   }));
 
+  //for dropdown
   const [searchAnchorEl, setSearchAnchorEl] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -71,6 +72,7 @@ const Addtofeed = () => {
           </LightTooltip>
         </Typography>
 
+       {/* peopleData, variable containing hard coded values */}
         {peopleData.map((person, index) => (
           <div key={index}>
             <Box sx={{ marginBottom: '10px' }}>
@@ -82,7 +84,7 @@ const Addtofeed = () => {
                 title={<Typography sx={{ fontSize: "15px" }}><b>{person.name}</b></Typography>}
                 subheader={<Typography sx={{ fontSize: "13px" }}>{person.jobTitle}</Typography>}
               />
-              <Follow><span style={{ fontSize: "20px", marginRight: "10px" }}>+</span> Follow</Follow>
+              <Follow><span className={classes.plus}>+</span> Follow</Follow>
             </Box>
           </div>
         ))}
