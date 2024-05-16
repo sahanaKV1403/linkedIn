@@ -18,8 +18,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
 import { useSelector, useDispatch } from 'react-redux';
-import { addPosts } from '../../store/postsSlice';
 import { useStyles } from './PostsStyles';
+import {fetchData} from '../api'
 
 const Posts = () => {
     const classes = useStyles();
@@ -40,19 +40,10 @@ const Posts = () => {
     //dispatch is a function that is used to send actions to the Redux store. 
     //Notifies the Redux store that a specific action has occurred
     //fetch data -> convert to json -> call dispatch which inturn updates the state with results array of fetched data 
+    
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`https://api.unsplash.com/search/photos/?page=2&query=office&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`);
-                const data = await response.json();
-                console.log('API data:', data.results);
-                dispatch(addPosts(data.results));
-            } catch (error) {
-                console.error(error);
-            }
-        }  
-        fetchData();
-    }, [dispatch]);
+        fetchData(dispatch);
+      }, [dispatch]);
 
 
     const [searchAnchorEl, setSearchAnchorEl] = useState(null);

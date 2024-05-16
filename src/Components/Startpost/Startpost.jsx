@@ -33,14 +33,14 @@ const Startpost = () => {
 
     const handlePost = () => {
         const post = {
-            "user":{
+            user:{
                 name:mydetails.myname,
                 location:mydetails.place,
                 bio:textFieldValue?textFieldValue:"",
                 portfolio_url:mydetails.portfolio_url,
                 total_likes:mydetails.likes,
                 profile_image:{
-                    large:myphoto?myphoto:'',
+                    large:myphoto,
                 }
             },
             urls:{
@@ -66,21 +66,21 @@ const Startpost = () => {
             },
         }));
 
-        // const Post = styled(Button)(() => ({
-        //     borderRadius: "50px",
-        //     border: "2px solid lightgrey",
-        //     color: "darkgrey",
-        //     fontWeight: "bold",
-        //     fontSize: "17px",
-        //     textTransform: 'none',
-        //     width: "450px",
-        //     margin: "10px 0px",
-        //     padding: "5px 15px",
-        //     justifyContent: 'start',
-        //     '&:hover': {
-        //         backgroundColor: "lightgrey"
-        //     }
-        // }));
+        const Post = styled(Button)(() => ({
+            borderRadius: "50px",
+            border: "2px solid lightgrey",
+            color: "darkgrey",
+            fontWeight: "bold",
+            fontSize: "17px",
+            textTransform: 'none',
+            width: "450px",
+            margin: "10px 0px",
+            padding: "5px 15px",
+            justifyContent: 'start',
+            '&:hover': {
+                backgroundColor: "lightgrey"
+            }
+        }));
 
         //opening and closing of dialog/modal
         const [open, setOpen] = React.useState(false);
@@ -120,10 +120,6 @@ const Startpost = () => {
               if (file) {
                 reader.readAsDataURL(file);
               }
-            // reader.onload = () => {
-            //     setSelectedFile(reader.result);
-            // };
-            // reader.readAsDataURL(file);
         };
 
         const removeSelectedFile = () => {
@@ -134,7 +130,7 @@ const Startpost = () => {
         return (
             <Card className={classes.startpost_card}>
                 <Avatar sx={{ margin: "10px 20px" }} src={myphoto}></Avatar>
-                <Button className={classes.posts1} onClick={handleClickOpen}>Start a post</Button>
+                <Post className={classes.posts1} onClick={handleClickOpen}>Start a post</Post>
                 {/* modal */}
                 <Dialog
                     onClose={handleClose}
@@ -184,8 +180,9 @@ const Startpost = () => {
                             rows={15}
                             placeholder='What do you want to talk about?'
                             className={classes.textfield}
-                            onChange={(e) => setTextFieldValue(e.target.value)}
+                            onChange={(e) => setTextFieldValue(e.target.value)}                       
                         />
+                           
                     </DialogContent>
 
                     {/* action buttons */}
